@@ -22,13 +22,23 @@ export function sumToN(n) {
  * @returns `1` if n is 0
  */
 export function factorial(n) {
-    if (n === 0 || n === 1) {
-    return 1; // Base case: 0! and 1! are both 1
-  }
+  //   if (n === 0 || n === 1) {
+  //   return 1; // Base case: 0! and 1! are both 1
+  // }
 
+  // let result = 1;
+  // for (let i = 2; i <= n; i++) {
+  //   result *= i;
+  // }
+  // return result;
+  if(typeof n !== "number")
+    return NaN;
+  if(n < 0) 
+    return undefined;
+  if(n === 0 || n === 1) 
+    return 1;
   let result = 1;
-  for (let i = 2; i <= n; i++) {
-    result *= i;
+  for (let i = 1; i <= n;i++) {
   }
   return result;
 }
@@ -40,7 +50,16 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  // TODO
+  if(typeof n !== "number")
+    return null;
+  if(n <= 0) 
+    return [];
+
+  let result =[];
+  for (let i = 1; i <= n; i++) {
+    return result.push(i);
+  }
+  return result;
 }
 
 /**
@@ -48,7 +67,18 @@ export function buildNArray(n) {
  * @returns {string} the longest string in `strings`
  */
 export function getLongestString(strings) {
-  // TODO
+  if(!Array.isArray(strings))
+    return null;
+  if(strings.length === 0)
+    return "";
+  let longest = "";
+
+  for(let str of strings){
+    if(typeof str === "strings" && str.length > longest.length){
+      longest = str;
+    }
+  }
+  return longest;
 }
 
 /**
@@ -56,7 +86,13 @@ export function getLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  let count = 0;
+  for(let student of attendance){
+    if(student === true) {
+      count++;
+    }
+  }
+  return count;
 }
 
 /**
